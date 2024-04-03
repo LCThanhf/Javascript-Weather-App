@@ -45,37 +45,42 @@ result.innerHTML = `
   <h4 class="date">${day}/${month}/${year}</h4>
 </div>
 <h4 class="desc">${data.weather[0].description}</h4>
-<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
-<h1>${data.main.temp} &#176;</h1>
-<div class="temp-container">
-    <div>
-        <h4 class="title">min</h4>
-        <h4 class="temp">${data.main.temp_min}&#176;</h4>
-    </div>
-    <div>
-        <h4 class="title">max</h4>
-        <h4 class="temp">${data.main.temp_max}&#176;</h4>
-    </div>
-</div>
-<div class="info-container">
-    <div>
-        <h4 class="title">Sunrise</h4>
-        <h4 class="sunrise">${sunriseTime}</h4>
-    </div>
-    <div>
-        <h4 class="title">Sunset</h4>
-        <h4 class="sunset">${sunsetTime}</h4>
-    </div>
-    <div>
-        <h4 class="title">Visibility</h4>
-        <h4 class="visibility">${visibility} meters</h4>
-    </div>
-    <div>
-        <h4 class="title">Humidity</h4>
-        <h4 class="humidity">${humidity}%</h4>
-    </div>
-</div>
+<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`;
+
+let htmlString = `
+  <h1>${data.main.temp}&#176;C</h1>
+  <div class="temp-container">
+      <div>
+          <h4 class="title">min</h4>
+          <h4 class="temp">${data.main.temp_min}&#176;C</h4>
+      </div>
+      <div>
+          <h4 class="title">max</h4>
+          <h4 class="temp">${data.main.temp_max}&#176;C</h4>
+      </div>
+  </div>
+  <div class="info-container">
+      <div>
+          <h4 class="title">Sunrise</h4>
+          <h4 class="sunrise">${sunriseTime}</h4>
+      </div>
+      <div>
+          <h4 class="title">Sunset</h4>
+          <h4 class="sunset">${sunsetTime}</h4>
+      </div>
+      <div>
+          <h4 class="title">Visibility</h4>
+          <h4 class="visibility">${visibility / 1000} km</h4>
+      </div>
+      <div>
+          <h4 class="title">Humidity</h4>
+          <h4 class="humidity">${humidity}%</h4>
+      </div>
+  </div>
 `;
+
+result.innerHTML += htmlString;
+
       })
       .catch((error) => {
         console.error(error);
