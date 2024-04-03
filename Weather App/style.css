@@ -165,6 +165,8 @@ body {
   font-size: 20px;
   color: var(--white);
   text-align: right;
+  margin-left: auto;
+  margin-right: 1px;
 }
 
 .sunrise, .sunset, .visibility, .humidity {
@@ -191,4 +193,9 @@ body {
   color: var(--white);
 }
 
-
+.long-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

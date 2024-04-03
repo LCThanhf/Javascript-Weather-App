@@ -41,7 +41,7 @@ let humidity = data.main.humidity;
 
 result.innerHTML = `
 <div class="header">
-  <h2 class="city-name">${data.name}</h2>
+  <h2 class="city-name long-text">${data.name}</h2>
   <h4 class="date">${day}/${month}/${year}</h4>
 </div>
 <h4 class="desc">${data.weather[0].description}</h4>
